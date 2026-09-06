@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.db
+*.pt
+*.onnx
+*.mp4
+*.avi
+outputs/
+.idea/
+.vscode/
+.DS_Store

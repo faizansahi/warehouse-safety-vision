@@ -1,0 +1,1 @@
+"""Warehouse safety event detection."""
