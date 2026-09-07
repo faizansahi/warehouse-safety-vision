@@ -1,1 +1,1 @@
-{"zones":[{"name":"illustrative-restricted-zone","kind":"restricted","polygon":[[0,20],[511,20],[511,511],[0,511]]}]}
+{"zones":[{"name":"demo-exclusion-zone","kind":"restricted","polygon":[[710,500],[999,500],[999,666],[710,666]]}]}
