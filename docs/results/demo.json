@@ -1,0 +1,38 @@
+{
+  "detections": 1,
+  "detection_details": [
+    {
+      "label": "person",
+      "confidence": 0.8988844156265259,
+      "box": [
+        13,
+        16,
+        364,
+        512
+      ]
+    }
+  ],
+  "events": [
+    {
+      "type": "PERSON_IN_RESTRICTED_ZONE",
+      "severity": "HIGH",
+      "zone": "illustrative-restricted-zone"
+    }
+  ],
+  "annotated_jpeg_bytes": 109988,
+  "persisted_events": [
+    {
+      "id": 1,
+      "type": "PERSON_IN_RESTRICTED_ZONE",
+      "severity": "HIGH",
+      "source": "nasa-astronaut.png",
+      "details": {
+        "zone": "illustrative-restricted-zone"
+      },
+      "occurred_at": "2026-09-07T00:41:59.540354"
+    }
+  ],
+  "sample_source": "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.25.2/skimage/data/astronaut.png",
+  "sample_sha256": "88431cd9653ccd539741b555fb0a46b61558b301d4110412b5bc28b5e3ea6cb5",
+  "note": "NASA public-domain portrait with an illustrative configured zone; not a warehouse validation dataset."
+}
