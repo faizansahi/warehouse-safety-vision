@@ -3,5 +3,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends libgl1 libglib2
 WORKDIR /app
 COPY pyproject.toml .
 COPY src src
+COPY config config
+COPY migrations migrations
+COPY alembic.ini .
+RUN pip install --no-cache-dir torch torchvision --index-url https://download.pytorch.org/whl/cpu
 RUN pip install --no-cache-dir .
-CMD ["uvicorn","warehouse_vision.main:app","--host","0.0.0.0","--port","8000"]
+CMD ["sh","-c","alembic upgrade head && uvicorn warehouse_vision.main:app --host 0.0.0.0 --port 8000"]
