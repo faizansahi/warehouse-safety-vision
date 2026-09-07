@@ -1,0 +1,18 @@
+<!doctype html><html lang="en"><meta charset="utf-8">
+    <title>Recorded safety events</title>
+    <style>body{font:18px/1.5 system-ui;margin:40px;color:#172b3a}
+    pre{font:16px/1.5 monospace;background:#f1f6f8;padding:24px;white-space:pre-wrap}</style>
+    <h1>GET /events</h1><p>Actual SQLite event API response after warehouse image inference.</p>
+    <pre>[
+  {
+    &quot;id&quot;: 1,
+    &quot;type&quot;: &quot;PERSON_IN_RESTRICTED_ZONE&quot;,
+    &quot;severity&quot;: &quot;HIGH&quot;,
+    &quot;source&quot;: &quot;warehouse-source.jpg&quot;,
+    &quot;details&quot;: {
+      &quot;zone&quot;: &quot;demo-exclusion-zone&quot;
+    },
+    &quot;occurred_at&quot;: &quot;2026-09-07T01:30:33.448147&quot;
+  }
+]</pre><p>The exclusion zone is a demo configuration,
+    not a finding about the photographed worker.</p></html>

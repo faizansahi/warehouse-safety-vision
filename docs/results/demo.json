@@ -3,12 +3,12 @@
   "detection_details": [
     {
       "label": "person",
-      "confidence": 0.8988844156265259,
+      "confidence": 0.7580966949462891,
       "box": [
-        13,
-        16,
-        364,
-        512
+        765,
+        244,
+        999,
+        645
       ]
     }
   ],
@@ -16,23 +16,23 @@
     {
       "type": "PERSON_IN_RESTRICTED_ZONE",
       "severity": "HIGH",
-      "zone": "illustrative-restricted-zone"
+      "zone": "demo-exclusion-zone"
     }
   ],
-  "annotated_jpeg_bytes": 109988,
+  "annotated_jpeg_bytes": 232592,
   "persisted_events": [
     {
       "id": 1,
       "type": "PERSON_IN_RESTRICTED_ZONE",
       "severity": "HIGH",
-      "source": "nasa-astronaut.png",
+      "source": "warehouse-source.jpg",
       "details": {
-        "zone": "illustrative-restricted-zone"
+        "zone": "demo-exclusion-zone"
       },
-      "occurred_at": "2026-09-07T00:41:59.540354"
+      "occurred_at": "2026-09-07T01:30:33.448147"
     }
   ],
-  "sample_source": "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.25.2/skimage/data/astronaut.png",
-  "sample_sha256": "88431cd9653ccd539741b555fb0a46b61558b301d4110412b5bc28b5e3ea6cb5",
-  "note": "NASA public-domain portrait with an illustrative configured zone; not a warehouse validation dataset."
+  "sample_source": "https://d1ldvf68ux039x.cloudfront.net/thumbs/photos/2310/8052998/1000w_q95.jpg",
+  "sample_sha256": "533f723b4760354319047176f7b37d16a20e66a953216b613d9cabb7272ce077",
+  "note": "DVIDS warehouse photograph by Ricardo J. Reyes, photo 8052998. The configured zone is a demonstration, not an assessment of the photographed worker."
 }

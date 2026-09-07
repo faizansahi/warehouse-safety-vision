@@ -1,8 +1,9 @@
-# Evidence provenance
-The sample is the public-domain NASA astronaut portrait described in [third-party notices](../../THIRD_PARTY_NOTICES.md). Input bytes and SHA-256 are recorded with actual results in `demo.json`.
+# Demo provenance
 
-`../images/demo.jpg` is the JPEG returned by the live FastAPI endpoint after actual YOLO11n inference. Green person boxes and confidence are model output; the orange polygon comes from `config/zones.demo.json`. The zone is deliberately illustrative and covers the detected person's foot point. The event was evaluated by the application's rule engine and read back from its SQLite event database.
+The input is the public-domain DVIDS warehouse photograph attributed in [third-party notices](../../THIRD_PARTY_NOTICES.md). Its SHA-256 is stored in `demo.json`.
 
-`../images/swagger.png` is a real browser screenshot. This demonstration is not a warehouse accuracy study. Unit tests use explicitly mocked detections and do not produce this image.
+`../images/safety-zone-alert.jpg` is the actual JPEG returned by FastAPI after YOLO11n inference. Boxes come from the model; the orange polygon comes from `config/zones.demo.json`. The zone is illustrative, not a finding about the worker.
 
-Reproduce with `ZONES_FILE=config/zones.demo.json` set before API startup, then `python scripts/demo_frame.py`.
+`../images/person-detection.jpg` is saved by Ultralytics from another inference on the same input. `events.html` renders the actual GET /events response, captured in `../images/event-api.png`. `../images/swagger-api.png` captures the running API docs.
+
+Set `ZONES_FILE=config/zones.demo.json` before API startup and run `python scripts/demo_frame.py`. Local evidence uses SQLite; container evidence uses PostgreSQL. A single photo is not a benchmark.
