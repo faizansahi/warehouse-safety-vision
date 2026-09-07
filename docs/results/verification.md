@@ -12,6 +12,11 @@ Ran YOLO11n on the attributed warehouse photograph: one person, confidence 0.758
 Absolute virtual-environment paths in reports are replaced with `<venv>` for portability.
 The test report retains upstream FastAPI/Starlette deprecation warnings.
 
-Docker is unavailable on the local Windows machine. Container checks run separately
-on GitHub-hosted Ubuntu with PostgreSQL 16. The current workflow is linked from the README;
-the final container evidence is recorded below after its run completes.
+Docker is unavailable on the local Windows machine. [CI run 34073515227](https://github.com/faizansahi/warehouse-safety-vision/actions/runs/34073515227)
+passed quality and container jobs on GitHub-hosted Ubuntu with PostgreSQL 16.
+This includes dependency installation, tests, lint, formatting, Compose validation,
+image build, and the running container workflow.
+
+The container ran real YOLO inference on the same warehouse photograph, triggered the configured zone event, and queried it from PostgreSQL. The returned annotation is [docker-frame.jpg](docker-frame.jpg).
+
+[Downloaded container results](docker-demo.json) are the actual artifact from that run.

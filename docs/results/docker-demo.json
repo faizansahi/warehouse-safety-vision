@@ -1,0 +1,58 @@
+{
+  "database": "PostgreSQL 16 via Compose",
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/health",
+      "status": 200,
+      "response": {
+        "status": "ok"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/analyze/frame",
+      "status": 200,
+      "response": {
+        "detections": 1,
+        "detection_details": [
+          {
+            "label": "person",
+            "confidence": 0.7580965757369995,
+            "box": [
+              765,
+              244,
+              999,
+              645
+            ]
+          }
+        ],
+        "events": [
+          {
+            "type": "PERSON_IN_RESTRICTED_ZONE",
+            "severity": "HIGH",
+            "zone": "demo-exclusion-zone"
+          }
+        ],
+        "annotated_jpeg_bytes": 232592
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/events",
+      "status": 200,
+      "response": [
+        {
+          "id": 1,
+          "type": "PERSON_IN_RESTRICTED_ZONE",
+          "severity": "HIGH",
+          "source": "warehouse-source.jpg",
+          "details": {
+            "zone": "demo-exclusion-zone"
+          },
+          "occurred_at": "2026-09-07T01:36:57.110853+00:00"
+        }
+      ]
+    }
+  ]
+}
