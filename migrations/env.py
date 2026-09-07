@@ -1,9 +1,17 @@
+import os
+
 from alembic import context
+from dotenv import load_dotenv
 from sqlalchemy import engine_from_config, pool
 
 from warehouse_vision.db import Base
 
+load_dotenv()
 config = context.config
+config.set_main_option(
+    "sqlalchemy.url",
+    os.getenv("DATABASE_URL", config.get_main_option("sqlalchemy.url")).replace("%", "%%"),
+)
 target_metadata = Base.metadata
 if context.is_offline_mode():
     context.configure(

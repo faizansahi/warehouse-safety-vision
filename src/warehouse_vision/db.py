@@ -1,8 +1,9 @@
-import os
 from datetime import UTC, datetime
 
 from sqlalchemy import JSON, DateTime, String, create_engine
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, sessionmaker
+
+from .config import settings
 
 
 class Base(DeclarativeBase):
@@ -22,7 +23,7 @@ class SafetyEvent(Base):
 
 
 engine = create_engine(
-    os.getenv("DATABASE_URL", "sqlite:///./safety.db"),
-    connect_args={"check_same_thread": False} if not os.getenv("DATABASE_URL") else {},
+    settings.database_url,
+    connect_args={"check_same_thread": False} if settings.database_url.startswith("sqlite") else {},
 )
 Session = sessionmaker(engine, expire_on_commit=False)

@@ -31,11 +31,11 @@ class Detection:
     box: tuple[int, int, int, int]
 
     @property
-    def foot(self):
-        return ((self.box[0] + self.box[2]) // 2, self.box[3])
+    def foot(self) -> tuple[int, int]:
+        return ((self.box[0] + self.box[2]) // 2, max(self.box[1], self.box[3] - 1))
 
     @property
-    def center(self):
+    def center(self) -> tuple[int, int]:
         return ((self.box[0] + self.box[2]) // 2, (self.box[1] + self.box[3]) // 2)
 
 
