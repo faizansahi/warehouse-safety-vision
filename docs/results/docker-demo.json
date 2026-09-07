@@ -1,0 +1,58 @@
+{
+  "database": "PostgreSQL 16 via Compose",
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/health",
+      "status": 200,
+      "response": {
+        "status": "ok"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/analyze/frame",
+      "status": 200,
+      "response": {
+        "detections": 1,
+        "detection_details": [
+          {
+            "label": "person",
+            "confidence": 0.8988843560218811,
+            "box": [
+              13,
+              16,
+              364,
+              512
+            ]
+          }
+        ],
+        "events": [
+          {
+            "type": "PERSON_IN_RESTRICTED_ZONE",
+            "severity": "HIGH",
+            "zone": "illustrative-restricted-zone"
+          }
+        ],
+        "annotated_jpeg_bytes": 109988
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/events",
+      "status": 200,
+      "response": [
+        {
+          "id": 1,
+          "type": "PERSON_IN_RESTRICTED_ZONE",
+          "severity": "HIGH",
+          "source": "nasa-astronaut.png",
+          "details": {
+            "zone": "illustrative-restricted-zone"
+          },
+          "occurred_at": "2026-09-07T00:49:52.080412+00:00"
+        }
+      ]
+    }
+  ]
+}

@@ -52,7 +52,7 @@ Python 3.12, FastAPI, Ultralytics YOLO11n, PyTorch, OpenCV, NumPy, SQLAlchemy, P
 
 The actual YOLO11n model detected **1 person with confidence 0.899** in a NASA public-domain portrait. A deliberately illustrative zone covering that person's foot point generated **1 HIGH PERSON_IN_RESTRICTED_ZONE event**, confirmed through the event API. Boxes come from model output; the orange polygon is configuration. This sample demonstrates the workflow and does not measure warehouse detection quality.
 
-[Actual output](docs/results/demo.json) · [Test report](docs/results/tests.txt) · [Provenance](docs/results/provenance.md) · [Verification status](docs/results/verification.md)
+[Actual output](docs/results/demo.json) · [PostgreSQL container results](docs/results/docker-demo.json) · [Test report](docs/results/tests.txt) · [Provenance](docs/results/provenance.md) · [Verification status](docs/results/verification.md)
 
 Reproduce using a fresh local database and a running API:
 
